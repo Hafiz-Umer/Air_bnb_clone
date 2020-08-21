@@ -36,10 +36,8 @@ class _SavedScreenState extends State<SavedScreen> {
             height: 25,
           ),
           Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/savedScreenImage.jpeg'),
-                    fit: BoxFit.fill)),
+            child: Expanded(
+                flex: 2, child: Image.asset("images/savedScreenImage.jpeg")),
           )
         ],
       ),

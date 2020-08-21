@@ -1,3 +1,4 @@
+import 'package:airbnb_clone_flutter/screens/map_screen.dart';
 import 'package:airbnb_clone_flutter/screens/saved_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,13 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double _labelFontSize = 10;
+    double _labelFontSize = 9;
     return Scaffold(
       backgroundColor: Colors.white,
       body: PageView(
         children: [
           Center(
-            child: Text("Explore Screen"),
+            child: MapScreen(),
           ),
           Container(
             child: SavedScreen(),
@@ -56,14 +57,17 @@ class _HomeScreenState extends State<HomeScreen> {
         onPageChanged: onPageChanged,
       ),
       bottomNavigationBar: Container(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20),
           child: CupertinoTabBar(
             backgroundColor: Colors.white,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage("images/icons/search.png"),
+                  AssetImage(
+                    "images/icons/search.png",
+                  ),
+                  size: 27,
                   color: (_page == 0) ? Colors.red : Colors.black,
                 ),
                 title: Text(
@@ -77,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("images/icons/heart_black.png"),
-                    color: (_page == 1) ? Colors.red : Colors.black),
+                    size: 27, color: (_page == 1) ? Colors.red : Colors.black),
                 title: Text(
                   'Saved',
                   style: TextStyle(
@@ -92,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       AssetImage(
                         "images/icons/airbnb.png",
                       ),
+                      size: 27,
                       color: (_page == 2) ? Colors.red : Colors.black),
                   title: Text("Trips",
                       style: TextStyle(
@@ -103,6 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage("images/icons/text-message.png"),
+                    size: 27,
                     color: (_page == 3) ? Colors.red : Colors.black,
                   ),
                   title: Text("Inbox",
@@ -115,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage("images/icons/user.png"),
+                  size: 27,
                   color: (_page == 4) ? Colors.red : Colors.black,
                 ),
                 title: Text("Profile",
