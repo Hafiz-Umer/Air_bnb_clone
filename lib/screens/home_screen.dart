@@ -1,3 +1,4 @@
+import 'package:airbnb_clone_flutter/screens/explore_screen.dart';
 import 'package:airbnb_clone_flutter/screens/map_screen.dart';
 import 'package:airbnb_clone_flutter/screens/saved_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: SavedScreen(),
           ),
           Center(
-            child: Text("Trips Screen"),
+            child: ExploreScreen(),
           ),
           Center(
             child: Text("Messages Screen"),
